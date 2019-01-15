@@ -29,33 +29,21 @@ var todoFunctions = {
     newTodoArray.push({ id: todoFunctions.generateId(), description: newTodo, done: false });
     return newTodoArray;
   },
-  deleteTodo: function (todos, idToDelete) {
-    // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
-    // return a new array, this should not contain any todo with an id of idToDelete
-    // hint: array.filter
-  },
-  markTodo: function (todos, idToMark) {
-    // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
-    // in the new todo array, all elements will remain unchanged except the one with id: idToMark
-    // this element will have its done value toggled
-    // hint: array.map
-  },
-  sortTodos: function (todos, sortFunction) {
-    // stretch goal! Do this last
-    // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
-    // sortFunction will have same signature as the sort function in array.sort
-    // hint: array.slice, array.sort
+  
 
-    /* if( todos.done===false){
-      if( todos.description[1]===0){
-        return 'high';
-      }
-      if( todos.description[1]===1){
-        return 'Mid';
-      }
-      return low;
-     }
-      */
+ 
+  deleteTodo: (todos, idToDelete) => todos.filter(todo => todo.id !== idToDelete),
+
+  markTodo: (todos, idToMark) => todos.map(element => {
+    const newElement = { ...element };
+    if (newElement.id === idToMark)
+      newElement.done = !newElement.done;
+    return newElement;
+  })
+  ,
+  sortTodos: function (todos, sortFunction) {
+    
+    
     const newArray = todos.map(todo => ({ ...todo }));
 
     return newArray.sort((prev,next)=> next.description[1] - prev.description[1]);
@@ -64,6 +52,7 @@ var todoFunctions = {
 
   },
 
+  
 };
 
 
