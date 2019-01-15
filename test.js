@@ -1,22 +1,37 @@
 var test = require('tape');
 var logic = require('./logic');
 
-var todos=[{id:0,description:"fatma",done:false}];
-var newtodo=[{id:1,description:"angham",done:false}];
-test('Example test', function(t) {
+var todos = [{ id: 0, description: ['hgg', 4], done: false }, { id: 1, description: ['fatma', 5], done: false }];
+var newtodo = ['ahfgfg', 6];
+test('Example test', function (t) {
   t.pass();
   t.end();
 });
-test('Add -todoarray',function (t){
+test('Add -todoarray', function (t) {
 
-  const actual =logic.addTodo(todos,"Sama");
-  const expected= [{id:0,description:"fatma",done:false},{id:1,description:"Sama",done:false}]
+  const actual = logic.addTodo(todos, ["angham", 0]);
+  const expected = [{ id: 0, description: ['hgg', 4], done: false }, { id: 1, description: ['fatma', 5], done: false }, { id: 1, description: ["angham", 0], done: false }]
 
-  t.deepEqual(actual,expected,'Add new to do ');
+  t.deepEqual(actual, expected, 'Add new to do ');
   t.end();
 
 });
 
+
+
+test('Sort -todoarray', function (t) {
+
+
+  const actual = logic.sortTodos(todos);
+  const expected = [
+    { id: 1, description: ['fatma', 5], done: false },
+    { id: 0, description: ['hgg', 4], done: false }
+  ];
+
+  t.deepEqual(actual, expected, 'Add new to do ');
+  t.end();
+
+});
 
 
 

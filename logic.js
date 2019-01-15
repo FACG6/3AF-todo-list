@@ -24,9 +24,9 @@ var todoFunctions = {
   },
 
   addTodo: function (todos, newTodo) {
-    if (typeof newTodo !== 'string') return `${typeof newTodo} is not allowed`;
+    if (typeof newTodo !== 'object') return `${typeof newTodo} is not allowed`;
     const newTodoArray = todos.map(todo => ({ ...todo }));
-    newTodoArray.push({ id:todoFunctions.generateId(), description: newTodo, done: false });
+    newTodoArray.push({ id: todoFunctions.generateId(), description: newTodo, done: false });
     return newTodoArray;
   },
   deleteTodo: function (todos, idToDelete) {
@@ -45,7 +45,25 @@ var todoFunctions = {
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
+
+    /* if( todos.done===false){
+      if( todos.description[1]===0){
+        return 'high';
+      }
+      if( todos.description[1]===1){
+        return 'Mid';
+      }
+      return low;
+     }
+      */
+    const newArray = todos.map(todo => ({ ...todo }));
+
+    return newArray.sort((prev,next)=> next.description[1] - prev.description[1]);
+
+
+
   },
+
 };
 
 
