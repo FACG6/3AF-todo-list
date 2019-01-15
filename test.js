@@ -1,36 +1,30 @@
-var test = require('tape');
-var logic = require('./logic');
 
-var todos=[{id:0,description:"fatma",done:false}];
-var newtodo=[{id:1,description:"angham",done:false}];
-test('Example test', function(t) {
-  t.pass();
-  t.end();
-});
-test('todoarray',function (t){
+const test = require('tape');
+const logic = require('./logic');
+var todos = [
+  {priority:1, id: 0, description: "fatma", done: false },
+  {priority:3, id: 2, description: "Anies", done: false },
+  {priority:2, id: 1, description: "Ahmed", done: false }
+];
 
-  const actual =logic.addTodo(todos,newtodo);
-  const expected= [{id:0,description:"fatma",done:false},{id:1,description:"angham",done:false}]
+// test('testing deleteTodo function',function (t){
+//   const actual =logic.deleteTodo(todos,0);
+//   const expected= [{id:1,description:"Ahmed",done:false},{id:2,description:"Anies",done:false}]
+// t.deepEqual(actual,expected,'the actual should be equal expected');
+// t.deepEqual(actual.length,2,'the actual lenght should be equal 2 ');
+// t.end();
 
-  t.deepEqual(actual,expected,'Pass');
-  t.end();
-
-});
-
+// });
 
 
-var nottodos=[{id:0,description:"fatma",done:false}];
-var newnottodo=[{id:1,description:"angham",done:false}];
-test('another Example test', function(q) {
-  q.pass();
-  q.end();
-});
-test('DeleteList',function (q){
+// test('testing markTodo function',function (t){
+//   const actual =logic.markTodo(todos,0);
+//   const expected=  [
+//     { id: 0, description: "fatma", done: true },
+//     { id: 1, description: "Ahmed", done: false },
+//     { id: 2, description: "Anies", done: false }
+//   ]
+// t.deepEqual(actual,expected,'the actual should be equal expected');
+// t.end();
 
-  const actual =logic.deleteTodo(nottodos,newnottodo);
-  const expected= [{id:1,description:"Anies",done:true,{id:2,description:"Ahmad",done:true}]
-
-  t.deepEqual(actual,expected,'Pass');
-  t.end();
-
-});
+// });
