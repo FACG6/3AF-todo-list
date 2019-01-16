@@ -1,3 +1,180 @@
-.MARK12{
-    border:2px solid black;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #C9CCD3;
+    background-image: linear-gradient(-20deg, #dcb0ed 0%, #99c99c 100%);
+    font-family: 'Lato', sans-serif;
+}
+.inputFromUser h2{
+    font-family: 'Lato', sans-serif;
+    text-align:left;
+    margin-left: 90px;
+}
+.contanier{
+    display: block;
+}
+/*Radio button style*/
+.container--label {
+    display: inline;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    margin-top: 1rem;
+}
+/* Hide the browser's default radio button */
+.container--label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color : grey;
+    border-radius: 50%;
+}
+/* On mouse-over, add a grey background color */
+.container--label.checkmark input ~ .checkmark {
+    background-color: #ccc;
+}
+/* When the radio button is checked, add a blue background */
+.container--label input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+/* Show the indicator (dot/circle) when checked */
+.container--label input:checked ~ .checkmark:after {
+    display: block;
+}
+/* Style the indicator (dot/circle) */
+.container--label .checkmark:after {
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+/***Div Proierity**/
+.Proierity{
+    width:94%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+    text-align: center;
+}
+.btn{
+    font-size: 25px;
+    margin-top: .5rem;
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 10%;
+    padding: .5rem .3rem;
+}
+/* Form And input Css */
+#inputFromUser{
+    padding: 20px;
+}
+#inputFromUser input{
+    width: 80%;
+    height: 40px;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid #2196F3;
+    color: black;
+    padding-left: 15px;
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+    margin-top: 30px;
+    outline: none;
+}
+/* LIst To DO */
+#add-todo{
+    border-radius: 5px;
+    text-align: center;
+    margin: 50px auto 0 auto;
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 50px;
+}
+/*******Lis To DO*********/
+.listtodo{
+    border-radius: 5px;
+    text-align: center;
+    margin: 50px auto;
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    height: auto;
+    width: 80%;
+    padding: 50px;
+    box-sizing: border-box;
+}
+.listtodo h2{
+    border-bottom: 2px solid #333333;
+    width: 100%;
+    margin: 0;
+    font-size: 3rem;
+}
+ul{
+    margin: 20px auto;
+    color: white;
+}
+.listtodo ul li{
+    height: 60px;
+    background: #2196F3;
+    width: 100%;
+    margin: 10px auto;
+    text-align: left;
+    line-height: 60px;
+    padding: 0 20px;
+    border-radius: 5px;
+    list-style-type: none;
+    color: blue;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.listtodo ul li.high{
+    background: #d8b1e9;
+}
+.listtodo ul li.mid{
+    background: #b3bcbe;
+}
+.listtodo ul li.low{
+    background: #9fc5a5;
+}
+.mark{
+    background: #9fc5a5;
+    text-decoration-line: line-through;
+}
+#delete--button,
+#mark--button{
+    display:inline-block;
+    background: none;
+    float:right;
+    padding: 5px 3px;
+    margin-top: 15px;
+    border: none;
+    outline: none;
+    margin-left: .7rem;
+    cursor: pointer;
+}
+#delete--button .far,
+#mark--button .fas{
+    font-size:18px;
 }
