@@ -4,11 +4,12 @@
   "description": "",
   "main": "dom.js",
   "scripts": {
-    "test": "node test.js|tap--spec"
+    "test": "nodemon ./test.js | tap-spec"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "nodemon": "^1.18.9",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.2"
   }
