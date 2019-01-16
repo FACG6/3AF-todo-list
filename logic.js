@@ -24,15 +24,10 @@ var todoFunctions = {
   },
 
   addTodo: function (todos, newTodo) {
-    // if (typeof newTodo !== 'object') return `${typeof newTodo} is not allowed`;
-    const newTodos = todos.map(todo => ({ ...todo }));
-    const newTodoObject = {
-      id: todoFunctions.generateId(),
-      description: newTodo,
-      done: false
-    }
-    newTodos.push(newTodoObject);
-    return newTodos;
+    if (typeof newTodo !== 'object') return `${typeof newTodo} is not allowed`;
+    const newTodoArray = todos.map(todo => ({ ...todo }));
+    newTodoArray.push({ id: todoFunctions.generateId(), description: newTodo, done: false });
+    return newTodoArray;
   },
   
 
