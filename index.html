@@ -7,14 +7,25 @@
   </head>
   <body>
     <div id = "todo-container">
-        <ul>
+        <ul id="ulList">
         </ul>
     </div>
-    <form id="add-todo">
-      <input type="text" name="description" value="">
-      <input type="submit" name="" value="Submit">
-    </form>
-  </body>
-  <script type="text/javascript" src = "./logic.js"></script>
-  <script type="text/javascript" src = "./dom.js"></script>
+    
+ <form id="add-todo">
+  <input type="text" name="description" value="" id="fromUser">
+  <input type="submit" name="" value="Submit">
+  <div id='priorities'>
+    <input type="radio" id="high" name="priority" value="0">h
+    <input type="radio" id="mid" name="priority" value="1">m
+    <input type="radio"  id="low" name="priority" value="2">l
+  </ul>
+</form>
+
+<div id="todo-container">
+  </div>
+
+<script type="text/javascript" src="./logic.js"></script>
+<script type="text/javascript" src="./dom.js"></script>
+</body>
+
 </html>
