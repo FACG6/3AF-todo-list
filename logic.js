@@ -24,11 +24,19 @@ var todoFunctions = {
   },
 
   addTodo: function (todos, newTodo) {
-    // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
-    // returns a new array, it should contain todos with the newTodo added to the end.
-    // add an id to the newTodo. You can use the generateId function to create an id.
-    // hint: array.concat
+    // if (typeof newTodo !== 'object') return `${typeof newTodo} is not allowed`;
+    const newTodos = todos.map(todo => ({ ...todo }));
+    const newTodoObject = {
+      id: todoFunctions.generateId(),
+      description: newTodo,
+      done: false
+    }
+    newTodos.push(newTodoObject);
+    return newTodos;
   },
+  
+
+ 
   deleteTodo: (todos, idToDelete) => todos.filter(todo => todo.id !== idToDelete),
 
   markTodo: (todos, idToMark) => todos.map(element => {
@@ -40,11 +48,16 @@ var todoFunctions = {
   ,
   sortTodos: function (todos, sortFunction) {
     
-    // stretch goal! Do this last
-    // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
-    // sortFunction will have same signature as the sort function in array.sort
-    // hint: array.slice, array.sort
+    
+    const newArray = todos.map(todo => ({ ...todo }));
+
+    return newArray.sort((prev,next)=> next.description[1] - prev.description[1]);
+
+
+
   },
+
+  
 };
 
 
