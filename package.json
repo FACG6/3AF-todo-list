@@ -4,11 +4,13 @@
   "description": "",
   "main": "dom.js",
   "scripts": {
-    "test": "nodemon ./test.js|tap-spec"
+    "test": "nodemon ./test.js|tap-spec",
+    "cover":"istanbul cover tape ./test.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "istanbul": "^1.1.0-alpha.1",
     "nodemon": "^1.18.9",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.2"
@@ -20,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/FACG6/3AF-todo-list/issues"
   },
-  "homepage": "https://github.com/FACG6/3AF-todo-list#readme"
+  "homepage": "https://github.com/FACG6/3AF-todo-list#readme",
+  "dependencies": {}
 }
