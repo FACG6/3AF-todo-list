@@ -25,6 +25,7 @@ var todoFunctions = {
 
   addTodo: function (todos, newTodo) {
     if (typeof newTodo !== 'object') return `${typeof newTodo} is not allowed`;
+    if(typeof newTodo[1] ==='string') return 'Enter Number' ;
     const newTodoArray = todos.map(todo => ({ ...todo }));
     newTodoArray.push({ id: todoFunctions.generateId(), description: newTodo, done: false });
     return newTodoArray;

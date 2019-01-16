@@ -1,3 +1,6 @@
+var test = require('tape');
+var logic = require('./logic');
+
 
 var todos1 = [{ id: 0, description: ['hgg', 4], done: false }, { id: 1, description: ['fatma', 5], done: false }];
 var newtodo = ['ahfgfg', 6];
@@ -14,6 +17,19 @@ test('Add -todoarray', function (t) {
   t.end();
 
 });
+
+
+
+test('Add -todoarray : Proirity', function (t) {
+
+  const actual = logic.addTodo(todos1, ["angham", ""]);
+  const expected ='Enter Number';
+
+  t.deepEqual(actual, expected, 'Add new to do :Proirity ');
+  t.end();
+
+});
+
 
 
 
