@@ -33,7 +33,7 @@ var todoFunctions = {
   }),
   sortTodos: function (todos, sortFunction) {
     const newArray = todos.map(todo => ({ ...todo }));
-    return newArray.sort((prev, next) => next.description[1] - prev.description[1]);
+    return newArray.sort((prev, next) => prev.description[1] - next.description[1] );
   },
 };
 // Why is this if statement necessary?
