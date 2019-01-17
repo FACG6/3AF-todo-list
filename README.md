@@ -14,8 +14,8 @@ This app helps people to organize their tasks in the life daily.
 
 ## Our working strategy:
 In our team we work in Pairs, we specify each pair tasks they have to accomplish. 
-First pair: created the repository, CSS and readme files.
-Second pair: finished test, logic and Dom files.
+First pair: created the repository, CSS, test(step 1&2) and logic(step 1&2) readme files.
+Second pair: finished test, finished logic and Dom files.
 Finall we reviewed all of the code, and all functions as one team.
 
 Finally: It was a great experience. We enjoyed teamwork.
