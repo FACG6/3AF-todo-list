@@ -24,5 +24,4 @@ Finally: It was a great experience. We enjoyed teamwork.
     • We learned how make TDD tests.
     • We learned how write pure functions
     • We learned how use DOM manipulation.
-    • We learned how to use local storage with JavaScript.
 
