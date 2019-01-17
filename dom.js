@@ -27,9 +27,13 @@
     let iedit = document.createElement('i');
     iedit.setAttribute('class', 'fas fa-check');
     editButtonNode.appendChild(iedit);
+    // Delete button event
     deleteButtonNode.addEventListener('click', function (event) {
       let newState = todoFunctions.deleteTodo(state, todo.id);
-      update(newState);
+      if(confirm( "Are you sure about deleting this task !!")){
+        update(newState);
+      }
+      
     });
     todoNode.appendChild(todoTask);
     if (todo.done) {
@@ -46,10 +50,11 @@
     });
     return todoNode;
   };
+ 
   // bind create todo form
   if (addTodoForm) {
     addTodoForm.addEventListener('submit', function (event) {
-      event.preventDefault()
+      event.preventDefault();
       let inputFromUser = document.querySelector('input[name=description]').value;
       var rate_value;
       if (document.getElementById('high').checked) {
@@ -62,14 +67,12 @@
       let desc = [];
       desc[0] = inputFromUser;
       desc[1] = rate_value;
-      console.log('rate', rate_value);
       let newState = todoFunctions.addTodo(state, desc);
-      console.log(newState);
       let sortedState = todoFunctions.sortTodos(newState);
       update(sortedState);
+      document.querySelector('input[name=description]').value='';
     });
   }
-
   let update = function (newState) {
     state = newState;
     renderState(state);

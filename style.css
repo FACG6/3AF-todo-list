@@ -7,6 +7,7 @@ body{
     background: #C9CCD3;
     background-image: linear-gradient(-20deg, #dcb0ed 0%, #99c99c 100%);
     font-family: 'Lato', sans-serif;
+    min-height: 100vh;
 }
 .inputFromUser h2{
     font-family: 'Lato', sans-serif;
@@ -86,6 +87,7 @@ body{
     border-radius: 4px;
     width: 10%;
     padding: .5rem .3rem;
+    cursor: pointer;
 }
 /* Form And input Css */
 #inputFromUser{
@@ -136,7 +138,7 @@ ul{
     color: white;
 }
 .listtodo ul li{
-    height: 60px;
+    height: auto;
     background: #2196F3;
     width: 100%;
     margin: 10px auto;
@@ -148,6 +150,7 @@ ul{
     color: blue;
     font-weight: bold;
     letter-spacing: 2px;
+    
 }
 .listtodo ul li.high{
     background: #d8b1e9;
